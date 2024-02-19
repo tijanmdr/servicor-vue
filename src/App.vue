@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper flex flex-col items-center content-center h-screen bg-blue-400 text-gray-200">
     <nav>
       <RouterLink to="/">Home</RouterLink>&nbsp;|&nbsp;
       <RouterLink to="/about">About</RouterLink>
@@ -7,11 +7,3 @@
     <RouterView/>
   </div>
 </template>
-<style>
-.wrapper {
-  text-align: center
-}
-</style>
-<script setup>
-let x = 4;
-</script>
