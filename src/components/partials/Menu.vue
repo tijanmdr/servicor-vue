@@ -11,8 +11,7 @@ let menus = ref([
 <template>
   <div class="header">
     <div class="flex w-full justify-between p-5">
-      <a href="/"
-         class="logo flex h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2">Logo </a>
+      <a href="/" class="logo flex h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2">Logo </a>
       <form class="flex h-12 w-12 items-center justify-center p-2" method="post">
         <input type="text" class="p-2 rounded-2xl border-2" name="search_text"/>
         <input type="submit" class="p-2 rounded-2xl border-2" name="Search"/>

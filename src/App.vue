@@ -8,7 +8,7 @@ import Footer from "@/components/partials/Footer.vue";
   <body class="bg-gray-100 w-full">
   <div class="p-4">
     <Menu/>
-    <RouterView class="min-h-screen"/>
+    <RouterView/>
     <Footer/>
   </div>
   </body>
