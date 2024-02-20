@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
 import { userStore } from '@/stores/index.js';
 
 const router = createRouter({
@@ -9,21 +8,21 @@ const router = createRouter({
             name: 'homeTag',
             meta: {requiresAuth: true},
             children: [{
-                path: '/about', name: 'about', component: () => import('../views/AboutView.vue')
+                path: '/about', name: 'about', component: () => import('@/views/AboutView.vue')
             },{
-                path: '/', name: 'home', component: () => import('../views/HomeView.vue')
+                path: '/', name: 'home', component: () => import('@/views/HomeView.vue')
             },]
         },
         {
             path: '/login',
             name: 'login',
             meta: { isGuest: true },
-            component: () => import('../views/LoginView.vue')
+            component: () => import('@/views/LoginView.vue')
         }, {
             path: '/register',
             name: 'register',
             meta: { isGuest: true },
-            component: () => import('../views/LoginView.vue')
+            component: () => import('@/views/LoginView.vue')
         }
     ]
 });
@@ -34,7 +33,7 @@ router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !user_store.token) {
         next({ name: 'login' });
     } else if (user_store.token && to.meta.isGuest) {
-        next({ name: 'about' });
+        next({ name: 'home' });
     } else {
         next();
     }

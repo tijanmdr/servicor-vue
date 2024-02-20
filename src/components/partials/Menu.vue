@@ -1,17 +1,29 @@
 <script setup>
-import { ref } from 'vue';
+import { reactive } from 'vue';
+import {userStore} from '@/stores/index.js';
 
-let menus = ref([
+let menus = reactive([])
+
+const store = userStore()
+if (store.token) {
+  menus = reactive([
+    { name: 'Home', url: '/' },
+    { name: 'About Us', url: '/about' },
+  ]);
+} else {
+  menus = reactive([
     { name: 'Home', url: '/' },
     { name: 'About Us', url: '/about' },
     { name: 'Login', url: '/login' }
-]);
+  ]);
+}
+
 </script>
 <template>
     <div class="header">
         <div class="flex w-full justify-between p-5">
             <a
-                href="/"
+                hreactive="/"
                 class="logo flex h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2"
                 >Logo
             </a>
