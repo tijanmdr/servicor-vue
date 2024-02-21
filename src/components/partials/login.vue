@@ -1,6 +1,9 @@
 <script setup>
 import { reactive } from 'vue';
 import { userStore } from '@/stores/index.js';
+import {useRouter} from "vue-router";
+
+const router = useRouter();
 
 let user = reactive({
     email: '',
@@ -8,9 +11,13 @@ let user = reactive({
     user_access_level: 1
 });
 
-function loginForm() {
-    const user_store = userStore();
-    user_store.login(user);
+async function loginForm() {
+    const user_store = await userStore();
+    await user_store.login(user);
+    if (user_store.response.status) {
+    } else {
+
+    }
 }
 </script>
 

@@ -7,11 +7,11 @@ const router = createRouter({
         {
             name: 'homeTag',
             meta: {requiresAuth: true},
-            children: [{
-                path: '/about', name: 'about', component: () => import('@/views/AboutView.vue')
-            },{
-                path: '/', name: 'home', component: () => import('@/views/HomeView.vue')
-            },]
+            children: [
+                {path: '/about', name: 'about', component: () => import('@/views/AboutView.vue')},
+                {path: '/', name: 'home', component: () => import('@/views/HomeView.vue')},
+                {path: '/logout', name: 'logout'},
+            ]
         },
         {
             path: '/login',

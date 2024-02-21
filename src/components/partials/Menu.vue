@@ -2,21 +2,8 @@
 import { reactive } from 'vue';
 import {userStore} from '@/stores/index.js';
 
-let menus = reactive([])
-
 const store = userStore()
-if (store.token) {
-  menus = reactive([
-    { name: 'Home', url: '/' },
-    { name: 'About Us', url: '/about' },
-  ]);
-} else {
-  menus = reactive([
-    { name: 'Home', url: '/' },
-    { name: 'About Us', url: '/about' },
-    { name: 'Login', url: '/login' }
-  ]);
-}
+const menus = store.getMenu
 
 </script>
 <template>
@@ -33,7 +20,8 @@ if (store.token) {
             </form>
             <div class="flex flex-row items-center gap-10 max-md:hidden md:relative">
                 <div v-for="(menu, key) in menus" key="{{key}}">
-                    <RouterLink :to="menu.url">{{ menu.name }}</RouterLink>
+                    <RouterLink :to="menu.url" v-if="!menu.url.includes('logout')">{{ menu.name }}</RouterLink>
+                    <RouterLink :to="menu.url" v-if="menu.url.includes('logout')" @click="store.logout">{{ menu.name }}</RouterLink>
                 </div>
             </div>
         </div>
