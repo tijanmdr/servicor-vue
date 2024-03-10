@@ -1,5 +1,4 @@
 <script setup>
-import { reactive } from 'vue';
 import {userStore} from '@/stores/index.js';
 
 const store = userStore()

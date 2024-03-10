@@ -14,10 +14,6 @@ let user = reactive({
 async function loginForm() {
     const user_store = await userStore();
     await user_store.login(user);
-    if (user_store.response.status) {
-    } else {
-
-    }
 }
 </script>
 
