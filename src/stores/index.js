@@ -14,7 +14,6 @@ export const userStore = defineStore('user', {
             if (this.token !== null) {
                 return reactive([
                     {name: 'Home', url: '/'},
-                    {name: 'Search', url: '#'},
                     {name: 'Logout', url: '/logout'}
                 ]);
             } else {
