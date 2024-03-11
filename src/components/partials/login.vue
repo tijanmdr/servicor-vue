@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 import { userStore } from '@/stores/index.js';
-import Error from "@/components/toasts/error.vue";
+import Error from '@/components/toasts/error.vue';
 
 let user = reactive({
     email: '',
@@ -11,16 +11,19 @@ let user = reactive({
 
 const store = userStore();
 async function loginForm() {
-  await store.login(user);
+    await store.login(user);
 }
 </script>
 
 <template>
     <form class="flex flex-col items-center" @submit.prevent="loginForm">
+        <Error
+            :message="store.errorMessage"
+            class="max-md:w-full md:w-96 p-2 flex items-center rounded-2xl mb-4"
+            v-if="store.error"
+        />
 
-        <Error :message=store.errorMessage class="max-md:w-full md:w-96 p-2 flex items-center rounded-2xl mb-4" v-if="store.error" />
-
-          <div class="bg-gray-100 max-md:w-full md:w-96 p-2 flex items-center rounded-2xl mb-4">
+        <div class="bg-gray-100 max-md:w-full md:w-96 p-2 flex items-center rounded-2xl mb-4">
             <input
                 type="email"
                 name="email"

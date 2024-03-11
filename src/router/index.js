@@ -7,25 +7,27 @@ const router = createRouter({
         {
             name: 'everyone',
             children: [
-                {path: '/', name: 'home', component : ()=>import('@/views/HomeView.vue')},
-                {path: '/about', name: 'about', component: () => import('@/views/AboutView.vue')},
+                { path: '/', name: 'home', component: () => import('@/views/HomeView.vue') },
+                { path: '/about', name: 'about', component: () => import('@/views/AboutView.vue') }
             ]
         },
         {
             name: 'homeTag',
-            meta: {requiresAuth: true},
-            children: [
-                {path: '/logout', name: 'logout'},
-            ]
+            meta: { requiresAuth: true },
+            children: [{ path: '/logout', name: 'logout' }]
         },
         {
             name: 'guest',
             meta: { isGuest: true },
             children: [
-                {path: '/login', name: 'login', component : ()=>import('@/views/LoginView.vue')},
-                {path: '/register', name: 'register', component: () => import('@/views/LoginView.vue')},
+                { path: '/login', name: 'login', component: () => import('@/views/LoginView.vue') },
+                {
+                    path: '/register',
+                    name: 'register',
+                    component: () => import('@/views/LoginView.vue')
+                }
             ]
-        },
+        }
     ]
 });
 

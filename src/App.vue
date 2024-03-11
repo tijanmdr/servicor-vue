@@ -1,13 +1,13 @@
 <script setup>
 import Menu from '@/components/partials/Menu.vue';
 import Footer from '@/components/partials/Footer.vue';
-import { onMounted } from 'vue'
-import { initFlowbite } from 'flowbite'
+import { onMounted } from 'vue';
+import { initFlowbite } from 'flowbite';
 
 // initialize components based on data attribute selectors
 onMounted(() => {
-  initFlowbite();
-})
+    initFlowbite();
+});
 </script>
 
 <template>
