@@ -1,6 +1,5 @@
 <script setup>
 import LoginForm from '../components/partials/login.vue';
-import error from '@/components/toasts/error.vue'
 </script>
 <template>
     <div class="flex flex-col items-center justify-center min-h-screen py-2">
@@ -21,7 +20,6 @@ import error from '@/components/toasts/error.vue'
                         </div>
                         <p class="text-gray-400 my-3">or use your email account</p>
                         <LoginForm />
-                      <error/>
                     </div>
                 </div>
             </div>

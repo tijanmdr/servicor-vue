@@ -1,43 +1,52 @@
 <template>
-    <div>
-        <h2 class="text-xl font-bold">About Us</h2>
-        <p>
-            Servicor has always had community at its heart. Founded in 2000 by two friends, their
-            aim was to build a community where people like them could find everything they needed to
-            settle into a new city: a job, a place to live, and some furniture to fill their place.
-            What they created was the first online classifieds platform in the UK – a space where
-            people could come together to help each other out in small ways.
-        </p>
-        <p>&nbsp;</p>
-        <p>
-            Today, Gumtree remains one of the UK’s largest online classifieds sites serving
-            communities up and down the UK, helping people find what they need most, affordably and
-            locally. Gumtree provides a platform for people to connect around a life stage, a need,
-            a pastime, passion or interest, from new parents trading buggies and nursery equipment,
-            to bike enthusiasts, fuelling their passion.
-        </p>
-        <p>&nbsp;</p>
-        <p>
-            So whether it’s a buyer for that “thing” you no longer need, a new car to get you from
-            A-B, a job, sofa or new flat, Gumtree makes Good Finds happen.
-        </p>
-
-        <p>&nbsp;</p>
-        <h2 class="text-xl font-bold">Our vision & mission</h2>
-        <p>
-            At Gumtree, we help make Good Finds happen. From great deals that save you a few extra
-            pounds, to finding a buyer who will enjoy something as much as you did.
-        </p>
-        <p>&nbsp;</p>
-        <p>
-            It’s all our responsibility to make sure getting a Good Find is always simple, easy, and
-            enjoyable, so we can build a culture where people share more and waste less. We’re
-            committed to building a recommerce culture in the UK. We believe it’s good for business,
-            for society and for the planet.
-        </p>
-        <p>&nbsp;</p>
-        <p>We help make Good Finds happen because we believe everything can find new purpose.</p>
-    </div>
+  <fwb-accordion>
+    <fwb-accordion-panel>
+      <fwb-accordion-header>header</fwb-accordion-header>
+      <fwb-accordion-content>
+        <div>
+          <p class="mb-2 text-gray-500 dark:text-gray-400">
+            Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.
+          </p>
+          <p class="text-gray-500 dark:text-gray-400">
+            Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.
+          </p>
+        </div>
+      </fwb-accordion-content>
+    </fwb-accordion-panel>
+    <fwb-accordion-panel>
+      <fwb-accordion-header>another header</fwb-accordion-header>
+      <fwb-accordion-content>
+        <div>
+          <p class="mb-2 text-gray-500 dark:text-gray-400">
+            Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.
+          </p>
+          <p class="text-gray-500 dark:text-gray-400">
+            Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline" >Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.
+          </p>
+        </div>
+      </fwb-accordion-content>
+    </fwb-accordion-panel>
+    <fwb-accordion-panel>
+      <fwb-accordion-header>and one more header</fwb-accordion-header>
+      <fwb-accordion-content>
+        <div>
+          <p class="mb-2 text-gray-500 dark:text-gray-400">
+            Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.
+          </p>
+          <p class="text-gray-500 dark:text-gray-400">
+            Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.
+          </p>
+        </div>
+      </fwb-accordion-content>
+    </fwb-accordion-panel>
+  </fwb-accordion>
 </template>
 
-<script setup></script>
+<script setup>
+import {
+  FwbAccordion,
+  FwbAccordionContent,
+  FwbAccordionHeader,
+  FwbAccordionPanel,
+} from 'flowbite-vue'
+</script>

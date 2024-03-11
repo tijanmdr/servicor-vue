@@ -1,8 +1,9 @@
 <template>
   <FwbToast closable type="danger">
-    You've unlocked achievement.
+    {{message}}
   </FwbToast>
 </template>
 <script setup>
 import {FwbToast} from "flowbite-vue";
+defineProps(['message'])
 </script>

@@ -6,7 +6,9 @@ export const userStore = defineStore('user', {
     state: () => ({
         user: {},
         token: localStorage.getItem('_token'),
-        response: {}
+        response: {},
+        error: false,
+        errorMessage: ""
     }), getters: {
         getMenu() {
             if (this.token !== null) {
@@ -36,6 +38,9 @@ export const userStore = defineStore('user', {
                         document.cookie = "_token=" + data.data.token + "; expires=" + d.toUTCString() + "; path=/";
                         localStorage.setItem('_token', data.data.token);
                         window.location.href="/"
+                    } else {
+                        this.error = true
+                        this.errorMessage = data.message
                     }
                 }).catch((err) => {
                     console.log(err);
@@ -45,6 +50,9 @@ export const userStore = defineStore('user', {
             localStorage.removeItem('_token');
             this.token = null
             window.location.href="/"
+        }, flushErrorBag () {
+            this.error = false
+            this.errorMessage = ''
         }
     }
 });

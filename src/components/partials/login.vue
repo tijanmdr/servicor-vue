@@ -1,9 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 import { userStore } from '@/stores/index.js';
-import {useRouter} from "vue-router";
-
-const router = useRouter();
+import Error from "@/components/toasts/error.vue";
 
 let user = reactive({
     email: '',
@@ -11,16 +9,18 @@ let user = reactive({
     user_access_level: 1
 });
 
+const store = userStore();
 async function loginForm() {
-    const user_store = await userStore();
-    await user_store.login(user);
+  await store.login(user);
 }
 </script>
 
 <template>
     <form class="flex flex-col items-center" @submit.prevent="loginForm">
-        <div class="bg-gray-100 max-md:w-full md:w-96 p-2 flex items-center rounded-2xl mb-4">
-            <!--      <FaRegEnvelope class="text-gray-400 m-2"/>-->
+
+        <Error :message=store.errorMessage class="max-md:w-full md:w-96 p-2 flex items-center rounded-2xl mb-4" v-if="store.error" />
+
+          <div class="bg-gray-100 max-md:w-full md:w-96 p-2 flex items-center rounded-2xl mb-4">
             <input
                 type="email"
                 name="email"
