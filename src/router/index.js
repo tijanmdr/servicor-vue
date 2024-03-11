@@ -5,11 +5,16 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
+            name: 'everyone',
+            children: [
+                {path: '/', name: 'home', component : ()=>import('@/views/HomeView.vue')},
+                {path: '/about', name: 'about', component: () => import('@/views/AboutView.vue')},
+            ]
+        },
+        {
             name: 'homeTag',
             meta: {requiresAuth: true},
             children: [
-                {path: '/about', name: 'about', component: () => import('@/views/AboutView.vue')},
-                {path: '/', name: 'home', component: () => import('@/views/HomeView.vue')},
                 {path: '/logout', name: 'logout'},
             ]
         },

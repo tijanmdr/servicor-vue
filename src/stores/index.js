@@ -14,13 +14,12 @@ export const userStore = defineStore('user', {
             if (this.token !== null) {
                 return reactive([
                     {name: 'Home', url: '/'},
-                    {name: 'About Us', url: '/about'},
+                    {name: 'Search', url: '#'},
                     {name: 'Logout', url: '/logout'}
                 ]);
             } else {
                 return reactive([
                     {name: 'Home', url: '/'},
-                    {name: 'About Us', url: '/about'},
                     {name: 'Login', url: '/login'},
                 ]);
             }

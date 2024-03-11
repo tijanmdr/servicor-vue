@@ -1,8 +1,32 @@
 <template>
-    <div class="header flex justify-center mt-4">
-        <b
-            >&copy; {{ new Date().toLocaleDateString('en-us', { year: 'numeric' }) }} &#8212;
-            Servicor by Tijan</b
-        >
-    </div>
+  <fwb-footer>
+    <fwb-footer-copyright
+        by="Flowbite™"
+        href="https://flowbite.com/"
+        copyright-message="All Rights Reserved."
+    />
+    <fwb-footer-link-group>
+      <fwb-footer-link href="#">
+        About
+      </fwb-footer-link>
+      <fwb-footer-link href="#">
+        Privacy Policy
+      </fwb-footer-link>
+      <fwb-footer-link href="#">
+        Licensing
+      </fwb-footer-link>
+      <fwb-footer-link href="#">
+        Contact
+      </fwb-footer-link>
+    </fwb-footer-link-group>
+  </fwb-footer>
 </template>
+
+<script setup>
+import {
+  FwbFooter,
+  FwbFooterCopyright,
+  FwbFooterLink,
+  FwbFooterLinkGroup,
+} from 'flowbite-vue'
+</script>

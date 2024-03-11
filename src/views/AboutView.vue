@@ -1,7 +1,7 @@
 <template>
   <fwb-accordion>
     <fwb-accordion-panel>
-      <fwb-accordion-header>header</fwb-accordion-header>
+      <fwb-accordion-header>About Us</fwb-accordion-header>
       <fwb-accordion-content>
         <div>
           <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -14,7 +14,7 @@
       </fwb-accordion-content>
     </fwb-accordion-panel>
     <fwb-accordion-panel>
-      <fwb-accordion-header>another header</fwb-accordion-header>
+      <fwb-accordion-header>What we do?</fwb-accordion-header>
       <fwb-accordion-content>
         <div>
           <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -22,19 +22,6 @@
           </p>
           <p class="text-gray-500 dark:text-gray-400">
             Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline" >Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.
-          </p>
-        </div>
-      </fwb-accordion-content>
-    </fwb-accordion-panel>
-    <fwb-accordion-panel>
-      <fwb-accordion-header>and one more header</fwb-accordion-header>
-      <fwb-accordion-content>
-        <div>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.
-          </p>
-          <p class="text-gray-500 dark:text-gray-400">
-            Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.
           </p>
         </div>
       </fwb-accordion-content>
