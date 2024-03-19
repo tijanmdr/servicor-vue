@@ -4,16 +4,34 @@ import { reactive } from 'vue';
 
 export const tasksStores = defineStore('tasks', {
     state: () => ({
-        task: {},
-        tasks: []
+        service: reactive({}),
+        services: reactive([]),
+        searchText: '',
     }),
-    getters: {},
+    getters: {
+        // getTasksList =
+    },
     actions: {
         flushTaskBag() {
-            this.task = {};
+            this.service = {};
         },
         flushTasksBag() {
-            this.tasks = [];
+            this.services = [];
+        }, async searchService(slug) {
+            const services = await axiosClient.get('search/'+slug)
+                .then(({data})=>{
+                    if (data.status) {
+                        this.services = data.data.data
+                    }
+                })
+        }, async getService(slug) {
+            const services = await axiosClient.get('service/'+slug)
+                .then(({data})=>{
+                    if (data.status) {
+                        console.log(data);
+                        this.service = data.data
+                    }
+                })
         }
     }
 });

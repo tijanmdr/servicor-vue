@@ -1,12 +1,15 @@
 <script setup>
 import { userStore } from '@/stores/index.js';
+import {useRouter} from "vue-router";
+const router = useRouter()
 
 const store = userStore();
 const menus = store.getMenu;
 let _searchText = '';
 
 function searchText() {
-    console.log(_searchText);
+  if (_searchText)
+    router.push({path: '/search/'+_searchText})
 }
 </script>
 <template>
