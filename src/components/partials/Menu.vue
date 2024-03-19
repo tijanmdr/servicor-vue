@@ -2,14 +2,14 @@
 import { userStore } from '@/stores/index.js';
 import {useRouter} from "vue-router";
 const router = useRouter()
-
 const store = userStore();
+
 const menus = store.getMenu;
-let _searchText = '';
+let _searchText = ''
 
 function searchText() {
   if (_searchText)
-    router.push({path: '/search/'+_searchText})
+    router.replace({path: '/search/'+_searchText})
 }
 </script>
 <template>

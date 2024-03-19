@@ -1,6 +1,6 @@
 <script setup>
 import {FwbImg} from "flowbite-vue";
-import {onBeforeMount} from "vue";
+import {onBeforeMount, watch} from "vue";
 import {useRoute} from "vue-router";
 import {tasksStores} from "@/stores/tasksStores.js";
 
@@ -10,6 +10,10 @@ onBeforeMount(()=>{
   console.log('before mount');
   let slug = router.params.slug
   serviceStore.searchService(slug)
+})
+
+watch(() => router.params.slug, (newSlug, oldSlug) => {
+   serviceStore.searchService(newSlug)
 })
 </script>
 
