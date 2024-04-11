@@ -22,7 +22,7 @@ watch(() => router.params.slug, (newSlug, oldSlug) => {
 
     <div v-for="(service, index) in serviceStore.services">
       <RouterLink :to="'/service/' + service.slug"
-                  class="flex flex-col items-center w-full bg-blue-400 text-gray-200 rounded-2xl shadow-2xl">
+                  class="flex flex-col items-center w-full text-gray-800 bg-gray-100 rounded-2xl shadow-2xl">
         <fwb-img src="/service_image.jpg" :alt="service.tags" width={0}
                  height={0}
                  sizes="100vw"
