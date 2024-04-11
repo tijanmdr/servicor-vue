@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia';
+import {defineStore} from 'pinia';
 import axiosClient from '../axios.js';
-import { reactive } from 'vue';
+import {reactive} from 'vue';
 
 export const tasksStores = defineStore('tasks', {
     state: () => ({
@@ -18,20 +18,20 @@ export const tasksStores = defineStore('tasks', {
         flushTasksBag() {
             this.services = [];
         }, async searchService(slug) {
-            const services = await axiosClient.get('search/'+slug)
-                .then(({data})=>{
+            const services = await axiosClient.get('search/' + slug)
+                .then(({data}) => {
                     if (data.status) {
-                        this.services = data.data.data
+                        this.services = data.data.data;
                     }
-                })
+                });
         }, async getService(slug) {
-            const services = await axiosClient.get('service/'+slug)
-                .then(({data})=>{
+            const services = await axiosClient.get('service/' + slug)
+                .then(({data}) => {
                     if (data.status) {
                         console.log(data);
-                        this.service = data.data
+                        this.service = data.data;
                     }
-                })
+                });
         }
     }
 });
